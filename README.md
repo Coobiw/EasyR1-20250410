@@ -44,10 +44,10 @@ make -j12 src.build BUILDDIR=path-to-nccl CUDA_HOME=/usr/local/cuda NVCC_GENCODE
 
 参数解释：
 
--j12: 表示使用12个核心，使用nproc查看总核心数，根据具体情况进行调整；
-BUILDDIR: 表示编译后，一些文件的存储路径；默认是nccl/build；当然如果是root用户可以指定到/usr/local/ncc/；
-CUDA_HOME: 表示CUDA的目录，默认就是/usr/local/cuda；
-NVCC_GENCODE：如果不添加该字段，默认会编译支持所有架构；为了加速编译以及降低二进制文件大小，添加该字段，具体comute_35,sm_35是应该是和显卡算力相匹配，如A100是compute_80,sm_80。RTX3090是compute_86,sm_86。以下是一些典型GPU算力对应表。
+- j12: 表示使用12个核心，使用nproc查看总核心数，根据具体情况进行调整；
+- BUILDDIR: 表示编译后，一些文件的存储路径；默认是nccl/build；当然如果是root用户可以指定到/usr/local/ncc/；
+- CUDA_HOME: 表示CUDA的目录，默认就是/usr/local/cuda；
+- NVCC_GENCODE：如果不添加该字段，默认会编译支持所有架构；为了加速编译以及降低二进制文件大小，添加该字段，具体comute_35,sm_35是应该是和显卡算力相匹配，如A100是compute_80,sm_80。RTX3090是compute_86,sm_86。
 
 
 完成编译后，编译产物出现在nccl/path-to-nccl/lib中：
